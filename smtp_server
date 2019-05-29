@@ -1,0 +1,61 @@
+import java.net.*;
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+class Server{
+
+    public static void main (String[] args)
+    {
+      try{      
+      //Defining/opening connection
+      ServerSocket srvr = new ServerSocket(9002);
+      Socket skt = srvr.accept();
+      
+      InputStreamReader bf = new InputStreamReader(skt.getInputStream());
+      BufferedReader in= new BufferedReader(bf);
+      PrintWriter out = new PrintWriter(skt.getOutputStream());
+      
+if (skt!= NULL)
+{
+ out.write("220 smtp.com");
+}
+while(true)
+{
+if (bf in "HELO")
+{
+out.write("250 anis.com, I am glad to meet you");
+}
+else if (bf in "MAIL")
+{
+out.write("250 ok");
+}
+else if (bf in "RCPT")
+{
+out.write("250 ok");
+}
+else if (bf in "DATA")
+{
+out.write("354 End data with <CR><LF>.<CR><LF>");
+}
+else if (bf in "Anis")
+{
+out.write("250 Ok: queued as 12345);
+}
+else if (bf in "QUIT")
+{
+out.write("221 Bye);
+}
+      });
+      receive.start();
+            
+      
+      
+      //closing connection
+      //out.close();
+      //skt.close();
+      //srvr.close();
+      }catch (IOException e){
+            e.printStackTrace();
+      }
+    }
+}
